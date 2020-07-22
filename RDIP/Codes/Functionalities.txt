@@ -1,0 +1,10 @@
+1. Drop Down for selecting language
+2. Boxes containing random words in that language
+3. A title 
+4. Formed Sentences (...)
+5. List of words in the sequence of their selection
+6. Button (Reform)
+7. After all words selected , new button (Check for correctness)
+8. display result
+9. button (Get Correct Sentence)
+10. List of all Correct sentances
