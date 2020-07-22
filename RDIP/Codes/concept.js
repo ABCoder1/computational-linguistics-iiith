@@ -18,6 +18,28 @@ var hinsen = [ [ ['राम और श्याम बाजार गयें
 		 	   [ ['एक बड़ी सी किताब वहाँ है'], ['एक बड़ी सी किताब है वहाँ'], ['बड़ी सी एक किताब वहाँ है'], ['बड़ी सी एक किताब है वहाँ'], ['वहाँ है एक बड़ी सी किताब'], ['वहाँ है बड़ी सी एक किताब'], ['है वहाँ एक बड़ी सी किताब'], ['है वहाँ बड़ी सी एक किताब'] ] ];
 
 
-body.addEventListener( "load", function(){
-	alert("Hello");
-});
+function click_handler1() {
+	alert("click_handler1"); 
+}
+
+function click_handler2() {
+	alert("click_handler2"); 
+}
+
+function message(){
+	if( document.getElementById("lang").value == "English"){
+
+		document.getElementById("msg1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
+		document.getElementById("msg2").innerHTML = "(select the buttons in proper order)";
+	}
+
+	if( document.getElementById("lang").value == "Hindi"){
+
+		document.getElementById("msg1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
+		document.getElementById("msg2").innerHTML = "(select the buttons in proper order)";
+	}
+}
+
+document.getElementById("lang").addEventListener("change", message, false);
+
+	
