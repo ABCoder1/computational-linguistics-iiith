@@ -18,14 +18,6 @@ var hinsen = [ [ ['राम और श्याम बाजार गयें
 		 	   [ ['एक बड़ी सी किताब वहाँ है'], ['एक बड़ी सी किताब है वहाँ'], ['बड़ी सी एक किताब वहाँ है'], ['बड़ी सी एक किताब है वहाँ'], ['वहाँ है एक बड़ी सी किताब'], ['वहाँ है बड़ी सी एक किताब'], ['है वहाँ एक बड़ी सी किताब'], ['है वहाँ बड़ी सी एक किताब'] ] ];
 
 
-function click_handler1() {
-	alert("click_handler1"); 
-}
-
-function click_handler2() {
-	alert("click_handler2"); 
-}
-
 function message(){
 	if( document.getElementById("lang").value == "English"){
 
@@ -40,6 +32,51 @@ function message(){
 	}
 }
 
+function shuffle(arr){
+	var ctr = arr.length, temp, index;
+
+	// While there are elements in the array
+    while (ctr > 0) {
+	// Pick a random index
+        index = Math.floor(Math.random() * ctr);
+	// Decrease ctr by 1
+        ctr--;
+	// And swap the last element with it
+        temp = arr[ctr];
+        arr[ctr] = arr[index];
+        arr[index] = temp;
+    }
+    return arr;
+}
+
+function selectsent(){
+	if ( document.getElementById("lang").value == "English" ) {
+		var randnum = Math.floor( Math.random()*10 );
+		var sent = engsen[randnum][0].toString();
+		var words = sent.split(" ");
+		words = shuffle(words);
+
+		document.getElementById("num").innerHTML = randnum ;
+		document.getElementById("word").innerHTML = sent ;
+		document.getElementById("word").innerHTML = words ;
+	}
+
+	if ( document.getElementById("lang").value == "Hindi" ) {
+		var randnum = Math.floor(Math.random()*7);
+		var sent = hinsen[randnum][0].toString();
+		var words = sent.split(" ");
+		words = shuffle(words);
+
+		document.getElementById("num").innerHTML = randnum ;
+		document.getElementById("word").innerHTML = sent ;
+		document.getElementById("word").innerHTML = words ;
+	}
+	
+
+}
+
 document.getElementById("lang").addEventListener("change", message, false);
+document.getElementById("lang").addEventListener("change", selectsent, false);
+
 
 	
